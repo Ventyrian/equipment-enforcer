@@ -1,4 +1,4 @@
-package com.equipmentlock;
+package com.equipmentenforcer;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -15,7 +15,6 @@ import net.runelite.client.game.ItemStats;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.util.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ import java.util.List;
 @PluginDescriptor(
 	name = "Equipment Lock"
 )
-public class EquipmentLockPlugin extends Plugin
+public class EquipmentEnforcerPlugin extends Plugin
 {
 	@Inject
 	private Client client;
@@ -32,7 +31,7 @@ public class EquipmentLockPlugin extends Plugin
     private ItemManager itemManager;
 
 	@Inject
-	private EquipmentLockConfig config;
+	private EquipmentEnforcerConfig config;
 
 	@Override
 	protected void startUp() throws Exception
@@ -77,9 +76,9 @@ public class EquipmentLockPlugin extends Plugin
 
 
 	@Provides
-	EquipmentLockConfig provideConfig(ConfigManager configManager)
+    EquipmentEnforcerConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(EquipmentLockConfig.class);
+		return configManager.getConfig(EquipmentEnforcerConfig.class);
 	}
 
     // Checks all stats defined in config. Returns true if the item meets all requirements (or if requirements are 0). Returns false if item fails any check

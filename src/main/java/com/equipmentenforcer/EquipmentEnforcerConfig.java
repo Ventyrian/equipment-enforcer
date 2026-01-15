@@ -1,12 +1,12 @@
-package com.equipmentlock;
+package com.equipmentenforcer;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup("equipmentlock")
-public interface EquipmentLockConfig extends Config
+@ConfigGroup("equipmentenforcer")
+public interface EquipmentEnforcerConfig extends Config
 {
 
     @ConfigSection(
